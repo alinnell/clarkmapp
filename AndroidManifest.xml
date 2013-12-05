@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.mesalu.clarkmapp.SplashActivity"
-            android:label="@string/app_name" 
+            android:label="@string/app_name"
             android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +26,12 @@
         <activity
             android:name="com.mesalu.clarkmapp.MainActivity"
             android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.mesalu.clarkmapp.HelpActivity"
+            android:label="@string/title_activity_help" 
+            android:theme="@android:style/Theme.Dialog"
+            >
         </activity>
     </application>
 

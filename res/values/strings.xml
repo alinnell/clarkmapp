@@ -8,7 +8,9 @@
     <string name="find_button_text">Locate A Room</string>
     <string name="map_button_text">Map</string>
     <string name="help_button_text">Help</string>
-
-
-
+    <string name="title_activity_help">HelpActivity</string>
+	<string name="help_text">\
+	    If you require any technical assistance you can contact the developers at:
+	   		 		help@mesalu.com</string>
+    
 </resources>
