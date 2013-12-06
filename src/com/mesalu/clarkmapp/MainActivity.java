@@ -39,6 +39,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			Intent i = new Intent(this, HelpActivity.class);
 			startActivity(i);
 			break;
+		case R.id.map_button:
+			Intent j = new Intent(this, MapActivity.class);
+			startActivity(j);
+			break;
 		}
 	}
 }

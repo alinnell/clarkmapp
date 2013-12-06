@@ -36,6 +36,10 @@
             android:name="com.mesalu.clarkmapp.HelpActivity"
             android:label="@string/title_activity_help" >
         </activity>
+        <activity
+            android:name="com.mesalu.clarkmapp.MapActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
     </application>
 
 </manifest>

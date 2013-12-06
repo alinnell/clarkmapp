@@ -16,5 +16,10 @@
     <string name="help_text">Help</string>
     <string name="lab_text">Open Labs</string>
     <string name="contact_button">Contact Support</string>
+    <string name="title_activity_map">Maps</string>
+    <string name="maincampus_button">Main Campus</string>
+    <string name="wsu_button">WSU Building</string>
+    <string name="imgdesc">I\'M AN IMAGE :D</string>
+    <string name="ctc_button">CTC</string>
 
 </resources>
