@@ -35,7 +35,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="48dp"
         android:text="@string/find_button_text" />
+
+    <Button
+        android:id="@+id/lab_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/find_button"
+        android:layout_alignRight="@+id/find_button"
+        android:layout_below="@+id/help_button"
+        android:text="@string/lab_text" />
 
 </RelativeLayout>

@@ -28,10 +28,13 @@
             android:label="@string/title_activity_main" >
         </activity>
         <activity
+            android:name="com.mesalu.clarkmapp.ContactActivity"
+            android:label="@string/title_activity_contact"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
             android:name="com.mesalu.clarkmapp.HelpActivity"
-            android:label="@string/title_activity_help" 
-            android:theme="@android:style/Theme.Dialog"
-            >
+            android:label="@string/title_activity_help" >
         </activity>
     </application>
 

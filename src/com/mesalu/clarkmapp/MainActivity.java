@@ -20,6 +20,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		findButton.setOnClickListener(this);
 		View helpButton = findViewById(R.id.help_button);
 		helpButton.setOnClickListener(this);
+		View labButton = findViewById(R.id.lab_button);
+		labButton.setOnClickListener(this);
 		
 		
 	}
