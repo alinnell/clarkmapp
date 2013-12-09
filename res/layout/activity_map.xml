@@ -12,7 +12,7 @@
         android:id="@+id/maincampus_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:text="@string/maincampus_button" />
 
@@ -20,28 +20,32 @@
         android:id="@+id/wsu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+		android:layout_toLeftOf="@id/maincampus_button"
+		android:layout_marginRight="6dp"
         android:layout_alignParentTop="true"
         android:text="@string/wsu_button" />
-
-    <ImageView
-        android:id="@+id/map_img_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/wsu_button"
-        android:layout_below="@+id/maincampus_button"
-        android:src="@drawable/splash"
-        android:contentDescription="@string/imgdesc"
-         />
-
+    
+   
     <Button
         android:id="@+id/ctc_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/map_img_view"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/maincampus_button"
+        android:layout_alignParentTop="true"
         android:text="@string/ctc_button" />
 
+    <!--  need to modify the three top buttons, they overlap in less than xhdpi screens -->
+
+ 	<ImageView
+ 	    android:id="@+id/map_img_view"
+ 	    android:layout_width="wrap_content"
+ 	    android:layout_height="wrap_content"
+ 	    android:layout_alignParentBottom="true"
+ 	    android:layout_alignParentLeft="true"
+ 	    android:layout_alignParentRight="true"
+ 	    android:layout_below="@+id/maincampus_button"
+ 	    android:contentDescription="@string/imgdesc"
+ 	    android:src="@drawable/splash" />
+    
 </RelativeLayout>

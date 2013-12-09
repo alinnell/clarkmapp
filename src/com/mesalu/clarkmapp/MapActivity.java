@@ -21,6 +21,8 @@ public class MapActivity extends Activity implements OnClickListener {
 		mcButton.setOnClickListener(this);
 		View wsuButton = findViewById(R.id.wsu_button);
 		wsuButton.setOnClickListener(this);
+		View ctcButton = findViewById(R.id.ctc_button);
+		ctcButton.setOnClickListener(this);
 		
 		Log.d("MapActivity", "oncreate finished");
 		
@@ -36,20 +38,24 @@ public class MapActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		ImageView iv;
 		Bitmap bm;
-		switch (v.getId()) {
-		case R.id.maincampus_button:
-			iv = (ImageView) findViewById(R.id.map_img_view);
-			bm = BitmapFactory.decodeResource(getResources(), R.drawable.clarkimg); //replace with
-															// main campus image later
-			iv.setImageBitmap(bm);
-			break;
+		switch (v.getId()){
 		case R.id.wsu_button:
+			//swap image view image to wsu image:
 			iv = (ImageView) findViewById(R.id.map_img_view);
 			bm = BitmapFactory.decodeResource(getResources(), R.drawable.splash);
-							// replace with wsu building map later.
 			iv.setImageBitmap(bm);
 			break;
-		// add case for ctc later.
+		case R.id.ctc_button:
+			iv = (ImageView) findViewById(R.id.map_img_view);
+			bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+			iv.setImageBitmap(bm);
+			break;
+		case R.id.maincampus_button:
+			iv = (ImageView) findViewById(R.id.map_img_view);
+			bm = BitmapFactory.decodeResource(getResources(), R.drawable.clarkimg);
+			iv.setImageBitmap(bm);
+			break;
 		}
+		
 	}
 }
