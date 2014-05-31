@@ -1,0 +1,20 @@
+
+public class Vertex implements Comparable<Vertex>{		//each Vertex is a point where two or more paths cross
+														                          //implementing comparable allows an ordering in the graph and priority queue
+														                          //and makes it easier to compare distances to each Vertex
+	
+	
+	public final String ID;										          //this is what the user inputs when going from class to class
+	public Edge[] adjacencies;									        //an array of edges that end up connecting to each other through the edge class
+	public double minDistance = Double.POSITIVE_INFINITY;		//Dijkstra's algorithm requires each distance to be infinity until relaxed
+	public Vertex previous;										            //remember the node that was before it in the queue
+	public Vertex (String argName) { ID = argName; }			//need to do some research on why
+	public String toString() { return ID; }						    //simple method for printing out Vertex name
+	
+	public int compareTo(Vertex other)							      //compare the distance to another node to determine the 
+	{															                        //shortest path to specific node
+		return Double.compare(minDistance, other.minDistance);
+	}
+
+	
+}
