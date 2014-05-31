@@ -1,0 +1,87 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.PriorityQueue;
+
+//using Dijkstra's single-source, shortest path algorithm that gets
+//user's selected starting and destination locations then goes through every
+//possible combination of non recurring vertices until the shortest path
+//to all vertices is found. At that point, we back track from the destination
+//vertex using the shortest distances until we get back to the starting vertex
+
+
+public class Dijkstra {
+	
+    public static void computePaths(Vertex sourceTex) {
+    	
+        sourceTex.minDistance = 0;
+        PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
+      	vertexQueue.add(sourceTex);
+
+	while ( vertexQueue.isEmpty() == false) {
+		
+	    Vertex t = vertexQueue.poll();
+
+            for (Edge e : t.adjacencies) {
+            	
+            	Vertex end = e.target;
+            	double weight = e.weight;
+            	double distToT = t.minDistance + weight;
+            	
+            if (distToT < end.minDistance) {
+            	
+			    vertexQueue.remove(end);
+			    end.minDistance = distToT ;
+			    end.previous = t;
+			    vertexQueue.add(end);
+            }
+            }
+        }
+    }
+
+    public static List<Vertex> getShortestPathTo(Vertex target) {
+    	
+        List<Vertex> path = new ArrayList<Vertex>();
+        
+        for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
+        	
+        path.add(vertex);
+        Collections.reverse(path);
+        return path;
+    }
+
+    public static void main(String[] args) {
+    	
+        Vertex v0 = new Vertex("Your Mom");
+        Vertex v1 = new Vertex("The backyard");
+        Vertex v2 = new Vertex("The bedroom");
+        Vertex v3 = new Vertex("School");
+        Vertex v4 = new Vertex("Hiding");
+
+		v0.adjacencies = new Edge[]{ new Edge(v1, 15),
+									new Edge(v2, 10),
+									new Edge(v3, 8)};
+		
+		v1.adjacencies = new Edge[]{ new Edge(v0, 15),
+									new Edge(v2, 2),
+									new Edge(v4, 20)};
+		
+		v2.adjacencies = new Edge[]{ new Edge(v0, 10),
+									new Edge(v1, 2),
+									new Edge(v4, 5)};
+		
+		v3.adjacencies = new Edge[]{ new Edge(v0, 8),
+		                             new Edge(v4, 40)};
+		
+		v4.adjacencies = new Edge[]{ new Edge(v1, 20),
+									new Edge(v2, 5),
+									new Edge(v3, 2)};
+		
+		Vertex[] vertices = { v0, v1, v2, v3, v4 };
+		
+		computePaths(v3);
+		System.out.println("Distance to " + v4 + ": " + v4.minDistance);
+		List<Vertex> path = getShortestPathTo(v4);
+		System.out.println("Path: " + path);
+    }
+}
